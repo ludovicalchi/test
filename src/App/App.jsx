@@ -7,7 +7,8 @@ function App() {
     <div className="App">
       Ludo Bourgogne
       <br/>
-      <Button></Button>
+      <Button><img src='/img/etre-en-desaccord.png' />cancel</Button>
+      <Button><img src='/img/se-mettre-daccord.png' />ok</Button>
     </div>
   );
 }
