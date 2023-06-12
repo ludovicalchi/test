@@ -5,9 +5,8 @@ import PropTypes from 'prop-types'
 const Button=(props)=>{
     console.log(props);
     return (
-        <button className={style.Button} onClick={(evt)=>{
-            console.log(evt);
-            props.onClick();
+        <button style={{background: props.bgColor}} className={style.Button} onClick={(evt)=>{
+            props.onClick('click click');
         }}>
             {props.children}
         </button>
