@@ -17,6 +17,11 @@
     border: solid chocolate;
 }
 
-.Button img{
+img{
     height: 25px;
+}
+
+.clicked{
+    box-shadow: 5px 5px 25px grey !important;
+    border: 3px solid black !important;
 }

@@ -1,14 +1,29 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import style from './Button.module.css'
 import PropTypes from 'prop-types'
 
 const Button=(props)=>{
     console.log(props);
+
+    const [isClicked, setIsClicked] = useState(false)
+
+    useEffect(()=> {
+        console.log('valeur post setCounter', isClicked)
+
+        if (isClicked) {
+            setTimeout(() => {
+                setIsClicked(false)
+                console.log('you can see me after 400 ms')
+            }, 1000);
+        }
+      }, [isClicked])
+    
     return (
         <button 
             type={props.type}
-            className={`${style.Button} btn${undefined!==props.className?' '+props.className:''}`}
+            className={`${style.Button} btn${undefined!==props.className?' '+props.className:''} ${isClicked===true?' '+style.clicked:''}`}
             onClick={(evt)=>{
+                setIsClicked(true)
                 props.onClick('click click');
             }}>
             {props.children}
