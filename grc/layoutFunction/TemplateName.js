@@ -4,7 +4,7 @@ import styles from './TemplateName.module.css';
 
 const TemplateName = (props)=>{
   return (
-    <div style={styles.TemplateName} data-testid="TemplateName">{props.children}</div>
+    <div className={styles.TemplateName} data-testid="TemplateName">{props.children}</div>
   )
 }
 

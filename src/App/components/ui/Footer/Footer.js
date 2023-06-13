@@ -17,7 +17,7 @@ const Footer = (props) => {
 
   return (
     <div className={styles.Footer} data-testid="Footer">
-      Footer Component
+      Consulter les CGU
     </div>
   );
 };

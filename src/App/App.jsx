@@ -1,41 +1,26 @@
-import React, {useState, useEffect} from 'react';
-import './App.css';
-import Button from './components/ui/Button/Button';
+import React from 'react'
+import FlexV3Grow from './components/layout/FlexV3Grow/FlexV3Grow'
+import Header from './components/ui/Header/Header'
+import NavBar from './components/ui/NavBar/NavBar'
+import FlexH1Grow from './components/layout/FlexH1Grow/FlexH1Grow'
+import MemeForm from './components//functional/MemeForm/MemeForm'
+import { MemeSVGViewer, emptyMeme } from 'orsys-tjs-meme'
+import Footer from './components/ui/Footer/Footer'
 
-function App() {
-  const [counter, setCounter] = useState(0)
-
-  useEffect(()=> {
-    console.log('valeur post setCounter', counter)
-
-    return ()=>{
-
-    }
-  }, [counter])
-
-  useEffect(()=> {
-    console.log('création du composant set des etats initiaux (car le tableau est vide => [])')
-    setCounter(425587965)
-  }, [])
-
+const App = () => {
   return (
     <div className="App">
-      Vive la Bourgogne <img src='/img/346209.svg' height="30px;" />
-      <br/>
-      <br/>
-      Compteur de fans : {counter}
-      <br/>
-      <br/>
-      <Button className="error" onClick={(unParamDeLEnfant)=>{
-        setCounter(counter-1)
-        console.log(counter)
-      }}><img src='/img/etre-en-desaccord.png' />-1</Button>
-      <Button className="primary" onClick={(unParamDeLEnfant)=>{
-        setCounter(counter+1)
-        console.log(counter)
-      }}><img src='/img/se-mettre-daccord.png' />+1</Button>
+      <FlexV3Grow>
+        <Header />
+        <NavBar />
+        <FlexH1Grow>
+          <MemeSVGViewer meme={emptyMeme} image={undefined} basePath='' />
+          <MemeForm />
+        </FlexH1Grow>
+        <Footer />
+      </FlexV3Grow>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

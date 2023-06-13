@@ -17,7 +17,7 @@ const Header = (props) => {
 
   return (
     <div className={styles.Header} data-testid="Header">
-      Header Component
+      Meme Generator <img src='/img/lavage-sous-pression.png' />
     </div>
   );
 };
