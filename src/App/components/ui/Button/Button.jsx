@@ -13,7 +13,7 @@ const Button=(props)=>{
         if (isClicked) {
             setTimeout(() => {
                 setIsClicked(false)
-                console.log('you can see me after 400 ms')
+                console.log('you can\'t see me after 400 ms')
             }, 1000);
         }
       }, [isClicked])
