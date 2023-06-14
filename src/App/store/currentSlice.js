@@ -11,6 +11,7 @@ const currentSlice = createSlice({
             Object.assign(state, action.payload)
         },
         clear: (state) => {
+            delete state.id
             Object.assign(state, emptyMeme)
         }
     },
@@ -24,7 +25,7 @@ const currentSlice = createSlice({
 export const { update, clear } = currentSlice.actions
 
 export const saveCurrent = createAsyncThunk('current/save', async (meme) => {
-   console.log(`saveCurren`,meme);
+
     const promiseCurrent = await fetch(
         `${REST_ADR}${ressourcesURI.memes}${undefined !== meme.id ? '/' + meme.id : ''}`,
         {

@@ -8,10 +8,10 @@ const Header = (props) => {
 
   useEffect(()=>{
     //cmp didmount
-    console.log('composant Header monté');
+    //console.log('composant Header monté');
     return ()=> {
       //cleanup
-      console.log('composant Header démonté');
+      //console.log('composant Header démonté');
     }
   }, []);
 

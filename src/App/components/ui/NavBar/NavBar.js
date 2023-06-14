@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import styles from './NavBar.module.css';
 import '../../../../../node_modules/bootstrap/dist/css/bootstrap.css'
-import '../../../../../node_modules/bootstrap/dist/js/bootstrap.js'
 import {Navbar, Container, Nav} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap'
+
 export const initialStateNavBar={};
 
 const NavBar = (props) => {
-  const [state, setState] = useState(initialStateNavBar);
 
   useEffect(()=>{
     //cmp didmount
-    console.log('composant NavBar monté');
+    //console.log('composant NavBar monté');
     return ()=> {
       //cleanup
-      console.log('composant NavBar démonté');
+      //console.log('composant NavBar démonté');
     }
   }, []);
 
@@ -23,18 +22,23 @@ const NavBar = (props) => {
       <Navbar bg="primary" variant="dark">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#collection">Collection</Nav.Link>
-            <Nav.Link href="#generator">Generator</Nav.Link>
+            <LinkContainer to="/thrumbail">
+              <Nav.Link href="/thrumbail">Thrumbail</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/meme">
+              <Nav.Link href="/meme">New</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/meme/0">
+              <Nav.Link href="/meme/0">Edit id:0</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/meme/1">
+              <Nav.Link href="/meme/1">Edit id:1</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Container>
       </Navbar>
     </div>
   );
 };
-
-NavBar.propTypes = {};
-
-NavBar.defaultProps = {};
 
 export default NavBar;

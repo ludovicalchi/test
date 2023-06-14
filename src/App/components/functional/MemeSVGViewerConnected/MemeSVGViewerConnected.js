@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {MemeSVGViewer} from 'orsys-tjs-meme'
 import {useSelector} from 'react-redux';
-export const initialStateMemeSvgViewerConnected={};
 
 const MemeSvgViewerConnected = (props) => {
-  const [state, setState] = useState(initialStateMemeSvgViewerConnected);
 
   const storeProps = useSelector(storeState => {
     return {

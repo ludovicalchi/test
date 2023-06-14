@@ -8,10 +8,10 @@ const Footer = (props) => {
 
   useEffect(()=>{
     //cmp didmount
-    console.log('composant Footer monté');
+    //console.log('composant Footer monté');
     return ()=> {
       //cleanup
-      console.log('composant Footer démonté');
+      //console.log('composant Footer démonté');
     }
   }, []);
 
